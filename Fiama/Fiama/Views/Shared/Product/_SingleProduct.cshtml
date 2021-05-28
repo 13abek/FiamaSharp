@@ -1,0 +1,61 @@
+﻿@model ProductViewModel
+
+<div class="product-img">
+    <a asp-controller="Products" asp-action="index" asp-route-id="@Model.id"><img src="~/uploads/@Model.Images.FirstOrDefault()" alt="@Model.Name"></a>
+    <div class="product-badge">
+        <ul>
+            @if (Model.Discount != null)
+            {
+                <li class="badge-2">@Model.Discount.Percentage.ToString("#.##") %</li>
+            }
+
+            @if (Model.Discount == null && Model.Label != null)
+            {
+                <li class="badge-1" style="background-color:@Model.Label.Color">@Model.Label.Text</li>
+            }
+        </ul>
+    </div>
+    <div class="product-hover-action product-hover-action-3">
+        <ul>
+            <li>
+                <a href="#" title="Quick View" data-toggle="modal" data-target="#quick_view_modal">
+                    <i class="icon-magnifier"></i>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="cart" asp-action="add" asp-route-id="@Model.id" class="add-to-basket" title="Add to Cart" data-toggle="modal" data-target="#add_to_cart_modal">
+                    <i class="icon-handbag"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" title="Quick View" data-toggle="modal" data-target="#quick_view_modal">
+                    <i class="icon-shuffle"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="product-info">
+    <div class="product-ratting">
+        <ul>
+            @for (int i = 0; i < Model.StarCount; i++)
+            {
+                <li><a href="#"><i class="icon-star"></i></a></li>
+            }
+        </ul>
+    </div>
+    <h2 class="product-title"><a asp-controller="Products" asp-action="index" asp-route-id="@Model.id">@Model.Name</a></h2>
+    <div class="product-price">
+        @if (Model.Discount == null)
+        {
+            <span>@Model.Price.ToString("#.00") ₼</span>
+        }
+        else
+        {
+            var price = Model.Price - (Model.Price * Model.Discount.Percentage / 100);
+             <span>@price.ToString("#.00") ₼</span>
+            <del>@Model.Price.ToString("#.00") ₼</del>
+        }
+
+    </div>
+</div>

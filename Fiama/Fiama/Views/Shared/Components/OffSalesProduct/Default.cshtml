@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ProductViewModel>
+    <div class="tab-pane fade" id="liton_tab_3_3">
+        <div class="ltn__product-tab-content-inner">
+            <div class="row ltn__tab-product-slider-one-active slick-arrow-1">
+                <!-- ltn__product-item -->
+                @foreach (var item in Model)
+                {
+                    <div class="col-12">
+                        <div class="ltn__product-item ltn__product-item-4">
+                         <partial name="Product/_SingleProduct"  model="item"/>
+                        </div>
+                    </div>
+                }
+                <!--  -->
+            </div>
+        </div>
+    </div>

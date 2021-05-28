@@ -1,0 +1,10 @@
+﻿@model IEnumerable<CategoryViewModel>
+<div class="widget ltn__menu-widget">
+    <h4 class="ltn__widget-title">categories</h4>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a asp-controller="Categories" asp-action="index" asp-route-id="@item.id">@item.Name</a></li>
+        }
+    </ul>
+</div>

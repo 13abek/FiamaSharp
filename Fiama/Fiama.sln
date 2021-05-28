@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fiama", "Fiama\Fiama.csproj", "{F21F4A6A-F915-4C20-A7B1-9662124DDC33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{AB364A6D-EE09-4D9A-BEEE-BA4B0433AE5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F21F4A6A-F915-4C20-A7B1-9662124DDC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21F4A6A-F915-4C20-A7B1-9662124DDC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21F4A6A-F915-4C20-A7B1-9662124DDC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21F4A6A-F915-4C20-A7B1-9662124DDC33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB364A6D-EE09-4D9A-BEEE-BA4B0433AE5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB364A6D-EE09-4D9A-BEEE-BA4B0433AE5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB364A6D-EE09-4D9A-BEEE-BA4B0433AE5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB364A6D-EE09-4D9A-BEEE-BA4B0433AE5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68037482-06FF-46FC-8551-40FA31C5416C}
+	EndGlobalSection
+EndGlobal

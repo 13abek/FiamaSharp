@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ShopCollectionViewModel>
+  <!-- BANNER AREA START -->
+<div class="ltn__banner-area  plr--5 mt-40">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ltn__banner-item">
+                        <div class="ltn__banner-img">
+                            <a href="@item.EndPoint"><img src="~/uploads/@item.Image" alt="Banner Image"></a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<!-- BANNER AREA END -->

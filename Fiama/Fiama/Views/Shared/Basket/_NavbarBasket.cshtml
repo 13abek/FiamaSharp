@@ -1,0 +1,55 @@
+﻿@model IEnumerable<BasketViewModel>
+
+
+@{
+    decimal total = 0M;
+}
+<div class="ltn__utilize-menu-head">
+    <span class="ltn__utilize-menu-title">Cart</span>
+    <button class="ltn__utilize-close">×</button>
+</div>
+<div class="mini-cart-product-area ltn__scrollbar">
+    @foreach (var item in Model)
+    {
+        decimal price = item.Product.Price;
+        if (item.Product.Discount != null)
+        {
+            price = item.Product.Price - (item.Product.Price * item.Product.Discount.Percentage) / 100;
+        }
+        decimal ProductPrice = (price * @item.Count);
+
+        <div class="mini-cart-item clearfix remove-Basket-class">
+            <div class="mini-cart-img">
+                <a asp-controller="Product" asp-action="index" asp-route-id="@item.Product.id"><img src="~/uploads/@item.Product.Images.FirstOrDefault()" alt="Images"></a>
+                <a asp-controller="Cart" asp-action="remove" asp-route-id="@item.id" class="remove-header-basket">
+                <span class="mini-cart-item-delete ">
+                    <i class="icon-trash "></i>
+                    </span>
+                </a>
+            </div>
+            <div class="mini-cart-info">
+                <h6><a asp-controller="Product" asp-action="index" asp-route-id="@item.Product.id">@item.Product.Name</a></h6>
+
+
+                <span class="mini-cart-quantity"> @item.Count x @price.ToString("0.##") ₼ </span>
+            </div>
+
+        </div>
+        //(price * item.Count)
+        total += ProductPrice;
+    }
+</div>
+<div class="mini-cart-footer">
+    <div class="mini-cart-sub-total">
+        <h5>Subtotal: <span class="TotalPrice">@total.ToString("0.##") ₼</span></h5>
+    </div>
+    <div class="btn-wrapper">
+        <a asp-controller="Cart" asp-action="index" class="theme-btn-1 btn btn-effect-1">View Cart</a>
+        <a asp-controller="Checkout" asp-action="index" class="theme-btn-2 btn btn-effect-2">Checkout</a>
+    </div>
+    @*<p>Free Shipping on All Orders Over $100!</p>*@
+</div>
+
+
+
+
